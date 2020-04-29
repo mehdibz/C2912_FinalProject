@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Update TV Show</title>
+</head>
+<body>
+  <div style="padding:20px;display:inline-flex;margin:2%;width: 80%;">
+    <h2>Update TV Show!</h2>
+    <div style="padding:20px;display:inline;margin:2%;width:40%;">
+      <form action="/updateTvShow" method="POST">
+        <input type="hidden" placeholder="TV Show name" name="ID" value={{ID}}>
+        <label> Capital city of the network : <input type="text" placeholder="Capital city" name="capitalCity" value={{capitalCity}}></label><br>
+        <input type="submit" value="Update">
+      </form>  
+    </div>
+    <div style="padding:20px;display:inline;margin:2%;width: 40%;">
+      <h3>{{result}} </h3>
+      {{#if showName}}
+        Name: {{showName}}
+        <ul>
+          {{#each genres}}
+            <li>{{this}}</li>
+          {{/each}}
+        </ul>
+        Rating: {{rating}}
+        <br>
+        <img src={{imgUrl}} height="150" width="150">
+      {{/if}}
+    </div>
+    {{> footer}}
+  </div>
+</body>
+</html>

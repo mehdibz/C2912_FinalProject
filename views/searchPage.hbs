@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Search TV Show</title>
+</head>
+<body>
+  <div style="padding:20px;display:inline-flex;margin:2%;width: 90%;">
+    <h2>Search TV Show!</h2>
+    <div style="padding:20px;display:inline;margin:2%;width:50%;">
+      <p>Enter your show TV details:</p>
+      <form action="/searchTvShow" method="POST">
+        <label> Show Name: <input type="text" placeholder="TV Show Name" name="showName"></label><br>
+        <label> Genre: <input type="text" placeholder="Genre" name="genre"></label><br>
+        <label> Rating > : <input type="text" placeholder="Rating" name="rating"></label><br>
+        <input type="submit" value="Submit">
+      </form>  
+    </div>
+    <div style="padding:20px;display:inline;margin:2%;width: 50%;">
+      <h3>{{result}} </h3>
+      {{#if showName}}
+        <p><a href="/updateTvShow/{{ID}}"><h4>Update TV Show!</h4></a></p>
+        <h4>TV SHOW FOUND !</h4>
+        Name: {{showName}}
+        <ul>
+          {{#each genres}}
+            <li>{{this}}</li>
+          {{/each}}
+        </ul>
+        Rating: {{rating}}
+        <br>
+        <img src={{imgUrl}} height="100" width="100">
+      {{/if}}
+    </div>
+    {{> footer}}
+  </div>
+</body>
+</html>

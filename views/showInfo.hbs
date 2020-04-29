@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Tv show information</title>
+</head>
+<body>
+  <div style="margin-left:40%; width:60%;overflow: auto;">
+      <h2>Tv show info:</h2>
+        <p><a href="/updateTvShow/{{ID}}"><h3>Update TV Show!</h3></a></p>
+        <h4>Name:  {{showName}} </h4>
+        <h4>TV show ID: {{ID}} </h4>
+        <h4>Genres:
+          <ul>
+          {{#each genres}}
+            <li>{{this}}</li>
+          {{/each}}
+          </ul>
+        </h4>
+        <h4>Rating: {{rating}}</h4>
+        {{#if capitalCity}}
+        <h4>Capital City of the network is {{capitalCity}}</h4>
+        {{/if}}
+  </div>
+  <div style="margin-left:40%; width:20%;overflow: auto;">
+      <img src={{imgUrl}} height="100" width="100">
+      {{> footer}}
+  </div>
+</body>
+</html>
